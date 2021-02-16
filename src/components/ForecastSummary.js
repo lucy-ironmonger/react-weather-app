@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../styles/App.css";
+import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
 
 const ForecastSummary = (props) => {
