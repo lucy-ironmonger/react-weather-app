@@ -1,34 +1,40 @@
 import React from "react";
-import "../styles/App.css";
+import "../styles/ForecastSummaries.css";
 import PropTypes from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
-const ForecastSummaries = ({ date, temperature, description, icon }) => {
+const ForecastSummaries = ({ forecasts }) => {
   return (
-    <div>
-      <div className="Forecast Summaries">
-        <p>Hello I am Forecast Summaries</p>
-      </div>
-      <div className="Forecast Summary">
-        <ForecastSummary
-          date={date}
-          temperature={temperature}
-          description={description}
-          icon={icon}
-        />
-      </div>
+    <div className="forecast-summaries">
+      {forecasts.map((forecast) => {
+        const { date, temperature, description, icon } = forecast;
+        return (
+          <ForecastSummary
+            date={date}
+            temperature={temperature}
+            description={description}
+            icon={icon}
+            key={date}
+          />
+        );
+      })}
     </div>
   );
 };
 
 ForecastSummaries.propTypes = {
-  date: PropTypes.number,
-  temperature: PropTypes.shape({
-    max: PropTypes.number,
-    min: PropTypes.number,
-  }).isRequired,
-  description: PropTypes.string,
-  icon: PropTypes.number,
-}.isRequired;
+  forecasts: PropTypes.arrayOf({
+    date: PropTypes.number.isRequired,
+    description: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+    temperature: PropTypes.shape({
+      max: PropTypes.number,
+      min: PropTypes.number,
+    }).isRequired,
+  }),
+};
 
+ForecastSummaries.defaultProps = {
+  forecasts: [],
+};
 export default ForecastSummaries;

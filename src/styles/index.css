@@ -1,13 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Potta+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 body {
   margin: 0;
-  font-family: "Potta One", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Bebas Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to left, #e66465, #9198e5);
+  background: linear-gradient(to left, #6478e6, #c8cadf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 code {
