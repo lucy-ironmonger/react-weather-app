@@ -16,4 +16,4 @@ As an **MVP**:
 
 The goal was to make the app look like this:
 
-![Weather App Example](https://github.com/ironmongrrrl/react-weather-app/img/weather-app-example.png "Weather App Example")
+![Weather App Example](https://github.com/ironmongrrrl/react-weather-app/blob/main/img/weather-app-example.png "Weather App Example")
