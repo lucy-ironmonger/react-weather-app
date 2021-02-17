@@ -5,6 +5,7 @@ Welcome to my 5 day weather forecasting app. The motivation behind this was to g
 - React
 - JSX
 - API calls
+- Documenting my understanding!
 
 ---
 
@@ -159,7 +160,7 @@ This now meets point 2 of the MVP:
 
 > Users should be able to see a summary of each day of the forecast, including the date, general description of the weather that day, and maximum temperature. We also need to repeat this for each day of the forecast.
 
-You'll notice the 'key' key, which is inputted as good practice.
+It is good practice to give the individual elements inside an array a stable identity; this is done through giving them each a [unique key](https://reactjs.org/docs/lists-and-keys.html#keys) - that is, genuinely unique, and not based on the array index (which can be shuffled!). This is what the 'key' key is above - I have used the date as this is unique to each daily weather report. The reasoning behind using a key is that React can then zone in on which specific elements to update, rather than updating the whole array each time there is a change, which is more efficient.
 
 Prop types are also imported and invoked throughout the project as a way of validating the data that is being passed through to reduce errors.
 
