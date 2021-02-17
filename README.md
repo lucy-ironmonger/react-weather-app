@@ -27,11 +27,9 @@ The goal was to make the app look like this:
 
 Based on the super helpful [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) I approached the project in the same way:
 
----
-
 ### 1. Start With A Mock
 
-Before jumping into an API call, we started with some [static JSON data](https://s3.eu-west-2.amazonaws.com/mcrcodes/weather/forecast.json)
+Before jumping into an API call, we started with some [static JSON data](https://s3.eu-west-2.amazonaws.com/mcrcodes/weather/forecast.json).
 
 ---
 
@@ -66,10 +64,10 @@ The hierarchy of the components would likely go:
 
 - Index.js
   - App.js
-  - Location Details
-  - Forecast Summaries
-    - Forecast Summary
-    - Forecast Details
+    - Location Details
+    - Forecast Summaries
+      - Forecast Summary
+      - Forecast Details
 
 ---
 
