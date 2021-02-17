@@ -23,7 +23,7 @@ The goal was to make the app look like this:
 
 ![Weather App Example](https://github.com/ironmongrrrl/react-weather-app/blob/main/img/weather-app-example.png "Weather App Example")
 
-##Thinking in React
+## Thinking in React
 
 Based on the super helpful [Thinking in React](https://reactjs.org/docs/thinking-in-react.html) I approached the project in the same way:
 
@@ -60,7 +60,7 @@ Based on this data model and the example image, it would make sense then that th
 - Forecast Summary (yellow) : individual components which represent each object within the 'Forecasts' array, showing a selection of key/value pairs from it (date, temperature, weather icon and description).
 - Forecast Details (green) : a component which represents specific key/value pairs from one of the objects within the Forecasts array.
 
-![Weather App Components](https://github.com/ironmongrrrl/react-weather-app/blob/main/img/weather-app-compnents.png "Weather App Components")
+![Weather App Components](https://github.com/ironmongrrrl/react-weather-app/blob/main/img/weather-app-components.png "Weather App Components")
 
 The hierarchy of the components would likely go:
 
@@ -169,7 +169,7 @@ Prop types are also imported and invoked throughout the project as a way of vali
 
 This is where the props for the date, temperature, description and icon are rendered.
 
-It's worth mentioning that I am using the BEM naming conventions for elements to keep things tidy!
+It's worth mentioning that I am using the [BEM naming conventions](http://getbem.com/naming/) to keep things tidy!
 
 Weather icons are imported as a npm module, as is 'Moment' to format the date.
 
