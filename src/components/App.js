@@ -8,7 +8,6 @@ const App = ({ location, forecasts }) => {
   const { city, country } = location;
   return (
     <div className="weather-app">
-      <p>Hello World</p>
       <LocationDetails city={city} country={country} />
       <ForecastSummaries forecasts={forecasts} />
       <ForecastDetails forecast={forecast}></ForecastDetails>
