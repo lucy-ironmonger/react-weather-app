@@ -11,6 +11,7 @@ const App = ({ location, forecasts }) => {
       <p>Hello World</p>
       <LocationDetails city={city} country={country} />
       <ForecastSummaries forecasts={forecasts} />
+      <ForecastDetails forecast={forecast}></ForecastDetails>
     </div>
   );
 };

@@ -3,18 +3,15 @@ import PropTypes from "prop-types";
 import "../styles/App.css";
 import "weather-react-icons/lib/css/weather-icons.css";
 import { WeatherIcon } from "weather-react-icons";
+import moment from "moment";
 
 const ForecastSummary = (props) => {
   const { date, description, icon, temperature } = props;
-
-  // DATE CONVERSION
-  const milliseconds = date * 1000;
-  const dateObject = new Date(milliseconds);
-  const correctDate = dateObject.toLocaleString("en-US");
-
   return (
     <div className="forecast-summary">
-      <div className="forecast-summary_date">{`Date: ${correctDate}`}</div>
+      <div className="forecast-summary_date">
+        {moment(date).format("ddd Do MMM")}
+      </div>
       <div className="forecast-summary_description">{`Weather: ${description}`}</div>
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         <WeatherIcon name="owm" iconId={icon} />
