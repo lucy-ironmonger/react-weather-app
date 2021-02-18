@@ -11,7 +11,7 @@ const ForecastSummary = (props) => {
       <div className="forecast-summary__date">
         {moment(date).format("ddd Do MMM")}
       </div>
-      <div className="forecast-summary__description">{`Weather: ${description}`}</div>
+      <div className="forecast-summary__description">{`${description}`}</div>
       <div className="forecast-summary__icon" data-testid="forecast-icon">
         <WeatherIcon name="owm" iconId={icon} />
       </div>

@@ -76,7 +76,7 @@ The hierarchy of the components would likely go:
 
 Now we have a component hierarchy, we can build this in the app. The React team advises separating the 'building components' task from the 'adding interactivity' task. In other words, adding state, which is 'data that changes over time' is definitely not static and is not included in this step. It will come later!
 
-The key goal at the end of this step is to have a library of reusable components that render the data model.
+The key goal at the end of this step is to have a library of reusable stateless components that render the data model.
 
 So to build a static version of the weather app that renders the data model, we want to:
 
@@ -181,3 +181,7 @@ The final requirement for the MVP is:
 ---
 
 ### 4. Identify The Minimal (but complete) Representation Of UI State
+
+In the React sense, “state” is an object that represents the parts of the app that can change. State allows us to keep track of how the user has interacted with our app.
+
+With this codebase I'm using functional components as opposed to class components, and therefore React Hooks to manage state.
