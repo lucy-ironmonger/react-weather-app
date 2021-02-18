@@ -15,7 +15,7 @@ const ForecastSummaries = ({ forecasts, onForecastSelect }) => {
             description={description}
             icon={icon}
             key={date}
-            onSelect={onForecastSelect}
+            onForecastSelect={onForecastSelect}
           />
         );
       })}

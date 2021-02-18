@@ -1,5 +1,3 @@
-/* eslint-disable  no-unused-vars */
-
 import React, { useState } from "react";
 import "../styles/App.css";
 import PropTypes from "prop-types";
@@ -9,12 +7,14 @@ import ForecastDetails from "./ForecastDetails";
 
 const App = ({ location, forecasts }) => {
   const { city, country } = location;
+
   const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
   // The below is setting the selectedForecast to be the object in forecasts that equals the selectedDate
   const selectedForecast = forecasts.find(
     (forecast) => selectedDate === forecast.date
   );
 
+  // THIS FUNCTION PASSES THE DATE INTO THE STATE, TO CHANGE THE STATE
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
   };

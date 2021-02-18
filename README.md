@@ -178,6 +178,8 @@ The final requirement for the MVP is:
 
 > Users should be able to click on one of the summaries to view all of the forecasted information for that date.
 
+This component is triggered to change by the user clicking on the 'More info' button in the Forecast Summary component. As this stage is just concerned with a static model, I simply created a stateless component within App.js. More on it next!
+
 ---
 
 ### 4. Identify The Minimal (but complete) Representation Of UI State
@@ -185,3 +187,111 @@ The final requirement for the MVP is:
 In the React sense, “state” is an object that represents the parts of the app that can change. State allows us to keep track of how the user has interacted with our app.
 
 With this codebase I'm using functional components as opposed to class components, and therefore React Hooks to manage state.
+
+#### The first State challenge
+
+I made a 'More info' button within the Forecast Summary.
+
+First let's talk about how the state change is setup, which will explain the chain of events when this button is clicked.
+
+#### Within App.js
+
+I'm a visual thinker, find it helpful to break this process down into the key players:
+
+- Setting state in the parent component (the parent)
+- A function in the parent component that has the power to change the state (the wife)
+- The process of passing this power down to the child (the gossip)
+- The end result (a happy family holiday)
+
+---
+
+**Setting State in the Parent Component (the parent)**
+
+I added some initial state using:
+
+```
+const [selectedDate, setSelectedDate] = useState(forecasts[0].date);
+```
+
+- **selectedDate** When you first load the Weather App, the selectedDate state variable is set to the first forecast in the array. Makes sense as this will typically be 'today's date'.
+
+- **setSelectedDate** The parent! This is the function to change the state of selectedDate.
+
+---
+
+**A function in the parent component that has the power to change the state (the wife)**
+
+- **handleForecastSelect** this is a function which takes a date parameter, and inputs it into the setSelectedDate function, which is the way of updating the state on selectedDate.
+
+```
+  const handleForecastSelect = (date) => {
+    setSelectedDate(date);
+  };
+```
+
+It's interesting that state has to be changed in this way, e.g. a button onClick event in a child component can't directly invoke setSelectedDate(date) in the parent, but must instead invoke a function in the parent that then can directly mutate the state of the parent.
+
+---
+
+**The process of passing this power down to the child (the gossip)**
+
+Changing the state on the parent is a cool power, right?! Even cooler if it can be done by a child!
+
+So, very simply the wife's power (handleForecastSelect) is passed down as a prop. Give the prop a name (in this case, onForecastSelect), and pass it down.
+
+In App.js:
+
+```
+<ForecastSummaries
+        forecasts={forecasts}
+        onForecastSelect={handleForecastSelect}
+      />
+```
+
+In ForecastSummaries.js:
+
+```
+<ForecastSummary
+            date={date}
+            temperature={temperature}
+            description={description}
+            icon={icon}
+            key={date}
+            onForecastSelect={onForecastSelect}
+```
+
+In ForecastSummary.js (the target child component):
+
+```
+<div className="forecast-summaries__button">
+        <button type="button" onClick={() => onForecastSelect(date)}>
+          More info
+        </button>
+```
+
+Boom! The date is fed in from the child, which is then passed into handleForecastSelect (the wife)...which is then passed into the setSelectedDate (the parent) - which changes the state.
+
+---
+
+**The end result (a happy family holiday)**
+
+So, what do we actually do with the new and improved state variable (selectedDate)?
+
+We ultimately use it in a constructive way. What are we looking to achieve? We want to select the correct object from the array, that matches the selectedDate.
+
+So really it's now quite a simple approach; we store the desired outcome in a variable (selectedForecast) and get it but using a === operator with our new information.
+
+```
+const selectedForecast = forecasts.find(
+    (forecast) => selectedDate === forecast.date
+  );
+```
+
+This selectedForecast is then finally rendered in our 'Forecast Details' component. Woo!
+
+```
+In App.js:
+<ForecastDetails forecast={selectedForecast} />
+```
+
+In Forecast Details the prop { forecast } is then destructured and the data rendered.
