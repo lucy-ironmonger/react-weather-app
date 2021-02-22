@@ -25,6 +25,7 @@ const App = () => {
   }, []);
 
   // THIS FUNCTION PASSES THE DATE INTO THE STATE, TO CHANGE THE STATE
+  // THE WIFE
   const handleForecastSelect = (date) => {
     setSelectedDate(date);
   };
