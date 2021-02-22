@@ -6,6 +6,7 @@ import "../styles/App.css";
 // import PropTypes from "prop-types";
 import LocationDetails from "./LocationDetails"; // First component
 import getForecast from "../requests/getForecast";
+import SearchForm from "./SearchForm";
 import ForecastSummaries from "./ForecastSummaries";
 import ForecastDetails from "./ForecastDetails";
 
@@ -34,6 +35,7 @@ const App = () => {
   return (
     <div className="weather-app">
       <LocationDetails city={location.city} country={location.country} />
+      <SearchForm />
       <ForecastSummaries
         forecasts={forecasts}
         onForecastSelect={handleForecastSelect}
