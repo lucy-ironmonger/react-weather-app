@@ -46,7 +46,9 @@ const App = () => {
     axios
       .post(
         `https://mcr-codes-weather.herokuapp.com/forecast?city=${searchLocation.city}`,
-        {}
+        {
+          city: `${searchLocation.city}`,
+        }
       )
       .then(
         (response) => {
