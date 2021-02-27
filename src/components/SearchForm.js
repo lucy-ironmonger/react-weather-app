@@ -3,7 +3,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const SearchForm = ({ searchLocation, setSearchLocation, onSubmit }) => {
+const SearchForm = ({
+  searchLocation,
+  setSearchLocation,
+  onSubmit,
+  onKeyPress,
+}) => {
   const handleOnChange = (event) => setSearchLocation(event.target.value);
 
   return (
@@ -14,6 +19,7 @@ const SearchForm = ({ searchLocation, setSearchLocation, onSubmit }) => {
         name="city"
         onChange={handleOnChange}
         value={searchLocation}
+        onKeyPress={onKeyPress}
       />
       <button type="submit" onClick={onSubmit}>
         Search

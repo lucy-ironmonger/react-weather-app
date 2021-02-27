@@ -32,6 +32,12 @@ const App = () => {
     getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
   };
 
+  const handleKeyPress = (event) => {
+    if (event.charCode === 13) {
+      handleLocationSearch();
+    }
+  };
+
   useEffect(() => {
     getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
   }, []);
@@ -44,6 +50,7 @@ const App = () => {
         searchLocation={searchLocation}
         setSearchLocation={setSearchLocation}
         onSubmit={handleLocationSearch}
+        onKeyPress={handleKeyPress}
       />
       <LocationDetails city={location.city} country={location.country} />
       <ForecastSummaries
