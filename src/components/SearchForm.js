@@ -2,6 +2,8 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import PropTypes from "prop-types";
+import "../styles/styles.css";
+import { Button } from "../styles/styles";
 
 const SearchForm = ({
   searchLocation,
@@ -21,9 +23,9 @@ const SearchForm = ({
         value={searchLocation}
         onKeyPress={onKeyPress}
       />
-      <button type="submit" onClick={onSubmit}>
-        Search
-      </button>
+      <Button className="mainBtn" type="submit" onClick={onSubmit}>
+        Make it rain
+      </Button>
     </div>
   );
 };

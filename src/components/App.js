@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 
 import React, { useState, useEffect } from "react";
-import "../styles/App.css";
+import "../styles/styles";
 import LocationDetails from "./LocationDetails"; // First component
 import getForecast from "../requests/getForecast";
 import SearchForm from "./SearchForm";
@@ -32,6 +32,7 @@ const App = () => {
     getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
   };
 
+  // ENTER KEY BUTTON EVENT LISTENER
   const handleKeyPress = (event) => {
     if (event.charCode === 13) {
       handleLocationSearch();

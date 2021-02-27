@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
+/* BODY */
 body {
   margin: 0;
   font-family: "Bebas Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -8,12 +9,39 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: linear-gradient(to left, #6478e6, #c8cadf);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* BUTTON STYLING */
+button {
+  font-family: "Bebas Neue", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+button:active {
+  top: 2px;
+}
+
+/* APP */
+.weather-app {
+  margin: 0 20px;
+}
+
+/* FORECAST SUMMARY */
+.forecast-summary {
+  margin: 0 2em 0 2em;
+}
+
+/* FORECAST SUMMARIES */
+.forecast-summaries {
+  display: flex;
+  flex-wrap: wrap;
 }

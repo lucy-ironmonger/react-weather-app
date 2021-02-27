@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 
 const LocationDetails = (props) => {
   const { city, country } = props;
-  return <h1>{`${city}, ${country}`}</h1>;
+  return (
+    <h1>
+      5-Day Forecast for
+      {` ${city}, ${country}`}
+    </h1>
+  );
 };
 
 export default LocationDetails;

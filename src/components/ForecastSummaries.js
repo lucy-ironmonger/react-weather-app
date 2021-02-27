@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ForecastSummaries.css";
+import "../styles/styles.css";
 import PropTypes from "prop-types";
 import ForecastSummary from "./ForecastSummary";
 
