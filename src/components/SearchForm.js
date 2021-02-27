@@ -23,7 +23,7 @@ const SearchForm = ({
         value={searchLocation}
         onKeyPress={onKeyPress}
       />
-      <Button className="mainBtn" type="submit" onClick={onSubmit}>
+      <Button className="searchBtn" type="submit" onClick={onSubmit}>
         Make it rain
       </Button>
     </div>
