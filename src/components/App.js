@@ -21,10 +21,6 @@ const App = () => {
     (forecast) => selectedDate === forecast.date
   );
 
-  useEffect(() => {
-    getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
-  }, []);
-
   // THIS FUNCTION PASSES THE DATE INTO THE STATE, TO CHANGE THE STATE
   // THE WIFE
   const handleForecastSelect = (date) => {
@@ -35,6 +31,10 @@ const App = () => {
   const handleLocationSearch = () => {
     getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
   };
+
+  useEffect(() => {
+    getForecast(setSelectedDate, setForecasts, setLocation, searchLocation);
+  }, []);
 
   // conditional logic added with selectedForecast&& so it only makes component if there is one
   return (

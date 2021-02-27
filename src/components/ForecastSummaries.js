@@ -13,7 +13,7 @@ const ForecastSummaries = ({ forecasts, onForecastSelect }) => {
             date={date}
             temperature={temperature}
             description={description}
-            icon={icon}
+            icon={icon.toString()}
             key={date}
             onForecastSelect={onForecastSelect}
           />
@@ -24,20 +24,18 @@ const ForecastSummaries = ({ forecasts, onForecastSelect }) => {
 };
 
 ForecastSummaries.propTypes = {
-  forecasts: PropTypes.arrayOf({
-    date: PropTypes.number.isRequired,
-    description: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    temperature: PropTypes.shape({
-      max: PropTypes.number,
-      min: PropTypes.number,
-    }).isRequired,
-  }),
+  forecasts: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.number,
+      description: PropTypes.string,
+      icon: PropTypes.number,
+      temperature: PropTypes.shape({
+        max: PropTypes.number,
+        min: PropTypes.number,
+      }),
+    })
+  ).isRequired,
   onForecastSelect: PropTypes.func.isRequired,
-};
-
-ForecastSummaries.defaultProps = {
-  forecasts: [],
 };
 
 export default ForecastSummaries;

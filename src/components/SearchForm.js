@@ -4,9 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const SearchForm = ({ searchLocation, setSearchLocation, onSubmit }) => {
-  const handleOnChange = (event) => {
-    setSearchLocation(event.target.value);
-  };
+  const handleOnChange = (event) => setSearchLocation(event.target.value);
 
   return (
     <div className="search-form">

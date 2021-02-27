@@ -6,9 +6,9 @@ const LocationDetails = (props) => {
   return <h1>{`${city}, ${country}`}</h1>;
 };
 
+export default LocationDetails;
+
 LocationDetails.propTypes = {
   city: PropTypes.string.isRequired,
   country: PropTypes.string.isRequired,
 };
-
-export default LocationDetails;
