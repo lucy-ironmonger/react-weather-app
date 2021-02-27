@@ -8,18 +8,16 @@ const SearchForm = ({ searchLocation, setSearchLocation, onSubmit }) => {
 
   return (
     <div className="search-form">
-      <form className="form">
-        <input
-          type="text"
-          id="city"
-          name="city"
-          onChange={handleOnChange}
-          value={searchLocation}
-        />
-        <button type="submit" onClick={onSubmit}>
-          Search
-        </button>
-      </form>
+      <input
+        type="text"
+        id="city"
+        name="city"
+        onChange={handleOnChange}
+        value={searchLocation}
+      />
+      <button type="submit" onClick={onSubmit}>
+        Search
+      </button>
     </div>
   );
 };
